@@ -4,8 +4,8 @@
     <title> Your Diary</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="style.css" type="text/css">
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    
+     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script defer src="/__/firebase/8.3.1/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
     <script defer src="/__/firebase/8.3.1/firebase-database.js"></script>
@@ -22,6 +22,20 @@
     </section>
     <textarea id="diaryInfo" placeholder="Write what's on your mind"></textarea>
     <button id="submit">Save!</button>
+    
+    <footer class="footer notification is-info mt-5 mb-0">
+    <div class="content has-text-centered">
+      <button class = "is-one-third" id="previousButton" onclick="prevPage()">
+        Previous page
+      </button>
+      <div id="pageNum">
+        1
+      </div>
+      <button class = "is-one-third" id="nextButton" onclick="nextPage()">
+        Next page
+      </button>
+    </div>
+  </footer>
   </body>
   <script src="diaryScript.js"></script>
 </html>

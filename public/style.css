@@ -1,3 +1,6 @@
+<html>
+<head>
+<style>
 h1 {
     text-align: center;
 }
@@ -14,6 +17,11 @@ textarea{
   font-size:1em;
 }
 
+.footer{
+  position:relative;
+  top:15vw;
+}
+
 #submit{
   position:relative;
   width:40vw;
@@ -26,3 +34,24 @@ textarea{
   color:rgb(150,150,250);
   font-size:1em;
 }
+#nextButton{
+  position:relative;
+  width:40vw;
+  height:10vw;
+  background:white;
+  border:solid;
+  border-color:rgb(90,100,250);
+  color:rgb(150,150,250);
+  font-size:1em;
+}
+#previousButton{
+  position:relative;
+  width:40vw;
+  height:10vw;
+  background:white;
+  border:solid;
+  border-color:rgb(90,100,250);
+  color:rgb(150,150,250);
+  font-size:1em;
+}
+

@@ -1,39 +1,38 @@
 let diary=document.querySelector("#diaryInfo");
 let submitBtn=document.querySelector("#submit");
-//let dateField=document.querySelector("#");
-//let pageNum=document.querySelector("#");
-//let nextPageBtn=document.querySelector("#");
-//let prevPageBtn=document.querySelector("#");
-console.log(submitBtn);
-//let dateDesc=dateField.value;
-//let pageNum=0;
+let pageNum=document.querySelector("#pageNum");
+let nextPageBtn=document.querySelector("#nextButton");
+let prevPageBtn=document.querySelector("#previousButton");
+
+console.log(parseInt(pageNum.innerHTML.trim()));
 
 // Determines if there was already content on this page number and 
 //fills in diary by reading from database
 function loadPage(){
-  if(retrieveFromDatabase("content")!=""){
-    diary.innerHTML=retrieveFromDatabase("content");
+  if(retrieveFromDatabase(parseInt(pageNum.innerHTML.trim()))!=""){
+    diary.innerHTML=retrieveFromDatabase(parseInt(pageNum.innerHTML.trim()));
   }
 }
 
 //increases page num
 function nextPage(){
-  pageNum.innerHTML=(pageNum.value)++;
+  pageNum.innerHTML=(parseInt(pageNum.innerHTML.trim()))++;
   loadPage();
 }
 
 //decreases page num
 function prevPage(){
-  pageNum.innerHTML=(pageNum.value)--;
+  pageNum.innerHTML=(parseInt(pageNum.innerHTML.trim()))--;
   loadPage();
 }
 
 //submits content of diary to database
 submitBtn.addEventListener("click", e => {
-    console.log("here");
+    console.log(pageNum.innerHTML);
      //Send to firebase
     firebase.database().ref().push({
         content: diary.value,
+        page: pageNum.innerHTML.trim(),
         type: "diary"
     });
 });
@@ -41,16 +40,14 @@ submitBtn.addEventListener("click", e => {
 
 
 //retrieves data from database based on parameter (options: page, content)
-function retrieveFromDatabase(value){
+function retrieveFromDatabase(){
     const messageRef = firebase.database().ref();
     messageRef.on('value', (snapshot) => {
     const data = snapshot.val();
         for(const recordKey in data){
             const record = data[recordKey];
-            if(value==="page"){
-               return record.page; 
-            }else if(value === "content"){
-               return record.content; 
+            if(pageNum.value==record.page){
+              return record.content; 
             }
         }
     });
