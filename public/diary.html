@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang ="en">
+  <head>
+    <title> Your Diary</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script defer src="/__/firebase/8.3.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.3.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+  </head>
+  
+  <body>
+    <section class="hero is-small notification is-info has-text-centered">
+    <div class="hero-body">
+      <p class="title">
+        Welcome to your diary!
+      </p>
+      </div>
+    </section>
+    <textarea id="diaryInfo" placeholder="Write what's on your mind"></textarea>
+    <button id="submit">Save!</button>
+  </body>
+  <script src="diaryScript.js"></script>
+</html>

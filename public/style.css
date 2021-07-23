@@ -1,0 +1,28 @@
+h1 {
+    text-align: center;
+}
+
+textarea{
+  position:relative;
+  left:10%;
+  top:10vw;
+  width:80vw;
+  height:70vw;
+  border:solid;
+  border-color:rgb(90,100,250);
+  padding: 5px;
+  font-size:1em;
+}
+
+#submit{
+  position:relative;
+  width:40vw;
+  height:10vw;
+  left:30%;
+  top:15vw;
+  background:white;
+  border:solid;
+  border-color:rgb(90,100,250);
+  color:rgb(150,150,250);
+  font-size:1em;
+}

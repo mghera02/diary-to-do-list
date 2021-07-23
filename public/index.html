@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Diary/ToDo!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    
+    <script src="/script.js" defer></script>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script defer src="/__/firebase/8.3.1/firebase-app.js"></script>
@@ -12,6 +17,34 @@
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
   </head>
   <body>
+    <section class="hero is-small notification is-info has-text-centered">
+    <div class="hero-body">
+      <p class="title">
+        Your Diary/ToDo!
+      </p>
+      <p class="subtitle">
+        For all your journaling needs!
+      </p>
+    </div>
+  </section>
     
+    <div id ="allThings">
+    <div class="container">
+    <section class="section">
+      <h1 class="title">Click your entry type!</h1>
+      <button class="button" onclick="location.href = 'diary.html'">Diary Entry</button>
+      <button class="button" onclick="location.href = 'todo.html'">To-do list Entry</button>
+      </section>
+      </div>
+    </div>
+    
+    <footer class="footer notification is-info mt-5 mb-0">
+    <div class="content has-text-centered">
+      <p class="subtitle">
+        Thanks for playing!
+      </p>
+      <p>Matthew Ghera & Anissa Abu-Hadba © 2021</p>
+    </div>
+  </footer>
   </body>
 </html>
